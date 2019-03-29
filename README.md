@@ -1,4 +1,4 @@
-This library offers a quick and easy way to create and send notifications in any language. The notifications are usually configured in the config screen of Notifications4Plugins and can then be sent for instance as an email by other plugins dynamic
+This library offers a quick and easy way to create and send notifications in any language. The notifications are usually configured in the config screen of Notifications4Plugin and can then be sent for instance as an email by other plugins dynamic
 
 The text of the notifications is parsed by default with the [Twig template engine!](https://twig.symfony.com/doc/1.x/templates.html), meaning the developer can replace placeholders and use if statements and loops
 
@@ -103,22 +103,15 @@ Expand you plugin class for installing languages of the library to your plugin
 ...
 ```
 
-#### Development interface
-First include the `Notifications4Plugins` autoloader relative in your main plugin class file
+#### Using trait
+Your class in this you want to use Notifications4Plugin needs to use the trait `Notifications4PluginTrait`
 ```php
 ...
-require_once __DIR__ . "/../../Notifications4Plugins/vendor/autoload.php";
-...
-```
-
-Your class in this you want to use Notifications4Plugins needs to use the trait `Notifications4PluginsTrait`
-```php
-...
-use srag\Plugins\Notifications4Plugins\Utils\Notifications4PluginsTrait;
+use srag\Plugins\Notifications4Plugin\Utils\Notifications4PluginTrait;
 ...
 class x {
 ...
-use Notifications4PluginsTrait;
+use Notifications4PluginTrait;
 ...
 ```
 
@@ -155,7 +148,7 @@ $sender = self::sender()->factory()->internalMail('from_user', 'to_user');
 $sender = self::sender()->factory()->vcalendar(...);
 
 // Implement a custom sender object
-// Your class must implement the interface `srag\Plugins\Notifications4Plugins\Sender\Sender`
+// Your class must implement the interface `srag\Plugins\Notifications4Plugin\Sender\Sender`
 ```
 
 ```php

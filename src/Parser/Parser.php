@@ -2,7 +2,7 @@
 
 namespace srag\Notifications4Plugin\Parser;
 
-use srag\Notifications4Plugin\Exception\Notifications4PluginsException;
+use srag\Notifications4Plugin\Exception\Notifications4PluginException;
 
 /**
  * Interface Parser
@@ -20,7 +20,7 @@ interface Parser {
 	 *
 	 * @return string
 	 *
-	 * @throws Notifications4PluginsException
+	 * @throws Notifications4PluginException
 	 */
 	public function parse(string $text, array $placeholders = array()): string;
 }

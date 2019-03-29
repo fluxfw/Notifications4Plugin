@@ -6,7 +6,7 @@ use ilMail;
 use ilMailError;
 use ilObjUser;
 use srag\DIC\DICTrait;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class InternalMailSender
@@ -21,7 +21,7 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
 class InternalMailSender implements Sender {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	/**
 	 * @var string
 	 */

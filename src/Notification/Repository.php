@@ -7,7 +7,7 @@ use srag\DIC\DICTrait;
 use srag\DIC\Plugin\PluginInterface;
 use srag\Notifications4Plugin\Ctrl\AbstractCtrl;
 use srag\Notifications4Plugin\Notification\Language\AbstractNotificationLanguage;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class Repository
@@ -19,7 +19,7 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
 final class Repository {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	/**
 	 * @var self[]
 	 */

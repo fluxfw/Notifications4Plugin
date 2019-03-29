@@ -10,7 +10,7 @@ use srag\CustomInputGUIs\PropertyFormGUI\ObjectPropertyFormGUI;
 use srag\DIC\Plugin\PluginInterface;
 use srag\Notifications4Plugin\Ctrl\AbstractCtrl;
 use srag\Notifications4Plugin\Notification\AbstractNotification;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class NotificationFormGUI
@@ -22,7 +22,7 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
  */
 class NotificationFormGUI extends ObjectPropertyFormGUI {
 
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	const LANG_MODULE = AbstractCtrl::LANG_MODULE_NOTIFICATIONS4PLUGIN;
 	/**
 	 * @var PluginInterface

@@ -4,7 +4,7 @@ namespace srag\Notifications4Plugin\Notification\Language;
 
 use ilDateTime;
 use srag\DIC\DICTrait;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class Repository
@@ -16,7 +16,7 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
 final class Repository {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	/**
 	 * @var self[]
 	 */
