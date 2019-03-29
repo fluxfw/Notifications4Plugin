@@ -4,13 +4,13 @@ namespace srag\Notifications4Plugin\UI;
 
 use ilConfirmationGUI;
 use ilSelectInputGUI;
-use srag\Notifications4Plugins\PropertyFormGUI\PropertyFormGUI;
+use srag\CustomInputGUIs\PropertyFormGUI\PropertyFormGUI;
 use srag\DIC\DICTrait;
 use srag\DIC\Plugin\Pluginable;
 use srag\DIC\Plugin\PluginInterface;
 use srag\Notifications4Plugin\Ctrl\AbstractCtrl;
 use srag\Notifications4Plugin\Notification\AbstractNotification;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class UI
@@ -22,7 +22,7 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
 final class UI implements Pluginable {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	/**
 	 * @var self
 	 */

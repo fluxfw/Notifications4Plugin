@@ -8,7 +8,7 @@ use srag\DIC\DICTrait;
 use srag\Notifications4Plugin\Notification\AbstractNotification;
 use srag\Notifications4Plugin\UI\NotificationFormGUI;
 use srag\Notifications4Plugin\UI\NotificationsTableGUI;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class AbstractCtrl
@@ -21,10 +21,10 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
 abstract class AbstractCtrl {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	const TAB_NOTIFICATIONS = "notifications";
 	const LANG_MODULE_NOTIFICATIONS4PLUGIN = "notifications4plugin";
-	const NAME = "Notifications4Plugins";
+	const NAME = "Notifications4Plugin";
 	const CMD_ADD_NOTIFICATION = "addNotification";
 	const CMD_APPLY_FILTER = "applyFilter";
 	const CMD_CREATE_NOTIFICATION = "createNotification";

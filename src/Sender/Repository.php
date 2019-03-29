@@ -3,9 +3,9 @@
 namespace srag\Notifications4Plugin\Sender;
 
 use srag\DIC\DICTrait;
-use srag\Notifications4Plugin\Exception\Notifications4PluginsException;
+use srag\Notifications4Plugin\Exception\Notifications4PluginException;
 use srag\Notifications4Plugin\Notification\AbstractNotification;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class Repository
@@ -17,7 +17,7 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
 final class Repository {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	/**
 	 * @var self
 	 */
@@ -58,7 +58,7 @@ final class Repository {
 	 * @param array                $placeholders
 	 * @param string               $language Omit to choose the default language
 	 *
-	 * @throws Notifications4PluginsException
+	 * @throws Notifications4PluginException
 	 */
 	public function send(Sender $sender, AbstractNotification $notification, array $placeholders = array(), string $language = "")/*: void*/ {
 		$parser = self::parser()->getParserForNotification($notification);

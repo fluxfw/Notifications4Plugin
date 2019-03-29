@@ -3,7 +3,7 @@
 namespace srag\Notifications4Plugin\Parser;
 
 use srag\DIC\DICTrait;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 use Twig_Environment;
 use Twig_Error;
 use Twig_Loader_String;
@@ -19,7 +19,7 @@ use Twig_Loader_String;
 class twigParser implements Parser {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	/**
 	 * @var array
 	 */

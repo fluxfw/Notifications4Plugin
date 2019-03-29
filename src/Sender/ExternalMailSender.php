@@ -4,8 +4,8 @@ namespace srag\Notifications4Plugin\Sender;
 
 use ilMimeMail;
 use srag\DIC\DICTrait;
-use srag\Notifications4Plugin\Exception\Notifications4PluginsException;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Exception\Notifications4PluginException;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class MailSender
@@ -20,7 +20,7 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
 class ExternalMailSender implements Sender {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	/**
 	 * @var string
 	 */
@@ -91,7 +91,7 @@ class ExternalMailSender implements Sender {
 		$sent = $this->mailer->Send();
 
 		if (!$sent) {
-			throw new Notifications4PluginsException("Mailer not returns true");
+			throw new Notifications4PluginException("Mailer not returns true");
 		}
 	}
 

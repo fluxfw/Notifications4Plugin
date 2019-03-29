@@ -5,16 +5,16 @@ namespace srag\Notifications4Plugin\Exception;
 use ilException;
 
 /**
- * Class Notifications4PluginsException
+ * Class Notifications4PluginException
  *
  * @package srag\Notifications4Plugin\Exception
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-class Notifications4PluginsException extends ilException {
+class Notifications4PluginException extends ilException {
 
 	/**
-	 * Notifications4PluginsException constructor
+	 * Notifications4PluginException constructor
 	 *
 	 * @param string $message
 	 * @param int    $code

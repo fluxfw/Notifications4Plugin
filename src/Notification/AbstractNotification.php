@@ -7,7 +7,7 @@ use arConnector;
 use ilDateTime;
 use srag\DIC\DICTrait;
 use srag\Notifications4Plugin\Notification\Language\AbstractNotificationLanguage;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class AbstractNotification
@@ -20,7 +20,7 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
 abstract class AbstractNotification extends ActiveRecord {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	/**
 	 * @var string
 	 *

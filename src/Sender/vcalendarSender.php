@@ -7,8 +7,8 @@ use ilMailbox;
 use ilMimeMail;
 use ilObjUser;
 use srag\DIC\DICTrait;
-use srag\Notifications4Plugin\Exception\Notifications4PluginsException;
-use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
+use srag\Notifications4Plugin\Exception\Notifications4PluginException;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class vcalendarSender
@@ -22,7 +22,7 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginsTrait;
 class vcalendarSender implements Sender {
 
 	use DICTrait;
-	use Notifications4PluginsTrait;
+	use Notifications4PluginTrait;
 	CONST METHOD_REQUEST = "REQUEST";
 	CONST METHOD_CANCEL = "CANCEL";
 	/**
@@ -141,7 +141,7 @@ class vcalendarSender implements Sender {
 		}
 
 		if (!$result) {
-			throw new Notifications4PluginsException("Mailer not returns true");
+			throw new Notifications4PluginException("Mailer not returns true");
 		}
 	}
 

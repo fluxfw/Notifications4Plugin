@@ -9,13 +9,13 @@ use srag\Notifications4Plugin\Sender\Repository as SenderRepository;
 use srag\Notifications4Plugin\UI\UI as NotificationUI;
 
 /**
- * Trait Notifications4PluginsTrait
+ * Trait Notifications4PluginTrait
  *
  * @package srag\Notifications4Plugin\Utils
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
-trait Notifications4PluginsTrait {
+trait Notifications4PluginTrait {
 
 	/**
 	 * @param string $notification_class

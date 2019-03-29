@@ -2,7 +2,7 @@
 
 namespace srag\Notifications4Plugin\Sender;
 
-use srag\Notifications4Plugin\Exception\Notifications4PluginsException;
+use srag\Notifications4Plugin\Exception\Notifications4PluginException;
 
 /**
  * Interface Sender
@@ -17,7 +17,7 @@ interface Sender {
 	/**
 	 * Send the notification
 	 *
-	 * @throws Notifications4PluginsException
+	 * @throws Notifications4PluginException
 	 */
 	public function send()/*: void*/
 	;
