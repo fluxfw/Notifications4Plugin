@@ -104,7 +104,7 @@ abstract class AbstractCtrl {
 
 		$table->resetOffset();
 
-		self::dic()->ctrl()->redirect($this);
+		self::dic()->ctrl()->redirect($this, self::CMD_LIST_NOTIFICATIONS);
 	}
 
 
@@ -118,7 +118,7 @@ abstract class AbstractCtrl {
 
 		$table->resetFilter();
 
-		self::dic()->ctrl()->redirect($this);
+		self::dic()->ctrl()->redirect($this, self::CMD_LIST_NOTIFICATIONS);
 	}
 
 
@@ -154,7 +154,7 @@ abstract class AbstractCtrl {
 			$form->getObject()->getTitle()
 		]), true);
 
-		self::dic()->ctrl()->redirect($this);
+		self::dic()->ctrl()->redirect($this, self::CMD_LIST_NOTIFICATIONS);
 	}
 
 
@@ -190,7 +190,7 @@ abstract class AbstractCtrl {
 			$form->getObject()->getTitle()
 		]), true);
 
-		self::dic()->ctrl()->redirect($this);
+		self::dic()->ctrl()->redirect($this, self::CMD_LIST_NOTIFICATIONS);
 	}
 
 
@@ -208,7 +208,7 @@ abstract class AbstractCtrl {
 		ilUtil::sendSuccess(self::plugin()
 			->translate("duplicated_notification", self::LANG_MODULE_NOTIFICATIONS4PLUGIN, [ $notification->getTitle() ]), true);
 
-		self::dic()->ctrl()->redirect($this);
+		self::dic()->ctrl()->redirect($this, self::CMD_LIST_NOTIFICATIONS);
 	}
 
 
@@ -235,7 +235,7 @@ abstract class AbstractCtrl {
 		ilUtil::sendSuccess(self::plugin()
 			->translate("deleted_notification", self::LANG_MODULE_NOTIFICATIONS4PLUGIN, [ $notification->getTitle() ]), true);
 
-		self::dic()->ctrl()->redirect($this);
+		self::dic()->ctrl()->redirect($this, self::CMD_LIST_NOTIFICATIONS);
 	}
 
 
