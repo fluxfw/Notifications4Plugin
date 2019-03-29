@@ -1,4 +1,8 @@
-Notifications4Plugins
+This library offers a quick and easy way to create and send notifications in any language. The notifications are usually configured in the config screen of Notifications4Plugins and can then be sent for instance as an email by other plugins dynamic
+
+The text of the notifications is parsed by default with the [Twig template engine!](https://twig.symfony.com/doc/1.x/templates.html), meaning the developer can replace placeholders and use if statements and loops
+
+The development interface offers easy methods to create, modify and send notifications
 
 ### Usage
 
@@ -99,8 +103,7 @@ Expand you plugin class for installing languages of the library to your plugin
 ...
 ```
 
-
-## Development interface
+#### Development interface
 First include the `Notifications4Plugins` autoloader relative in your main plugin class file
 ```php
 ...
@@ -119,28 +122,28 @@ use Notifications4PluginsTrait;
 ...
 ```
 
-### Get notification(s)
+##### Get notification(s)
 Main
 ```php
 // Get the notification by name
-$notification = self::notification()->getNotificationByName(self::MY_UNIQUE_NAME);
+$notification = self::notification(Notification::class, NotificationLanguage::class)->getNotificationByName(self::MY_UNIQUE_NAME);
 
 // Get notifications for a selection list (For instance the options for an `ilSelectInputGUI`)
-$notifications = self::notification()->getArrayForSelection($notifications);
+$notifications = self::notification(Notification::class, NotificationLanguage::class)->getArrayForSelection($notifications);
 ```
 Other
 ```php
 // Get the notification by id
-$notification = self::notification()->getNotificationById(self::MY_UNIQUE_ID);
+$notification = self::notification(Notification::class, NotificationLanguage::class)->getNotificationById(self::MY_UNIQUE_ID);
 
 // Get notifications for a table
-$notifications = self::notification()->getArrayForTable($notifications);
+$notifications = self::notification(Notification::class, NotificationLanguage::class)->getArrayForTable($notifications);
 
 // Get the notifications
-$notifications = self::notification()->getNotifications();
+$notifications = self::notification(Notification::class, NotificationLanguage::class)->getNotifications();
 ```
 
-### Send a notification
+##### Send a notification
 ```php
 // Send the notification as external mail
 $sender = self::sender()->factory()->externalMail('from_email', 'to_email');
@@ -169,9 +172,9 @@ self::sender()->send($sender, $notification, $placeholders);
 self::sender()->send($sender, $notification, $placeholders, 'de');
 ```
 
-### Create a notification
+##### Create a notification
 ```php
-$notification = self::notification()->factory()->newInstance();
+$notification = self::notification(Notification::class, NotificationLanguage::class)->factory()->newInstance();
 
 $notification->setName(self::MY_UNIQUE_NAME); // Use the name as unique identifier to retrieve this object later
 $notification->setDefaultLanguage('en'); // The text of the default language gets substituted if you try to get the notification of a langauge not available
@@ -184,20 +187,20 @@ $notification->setText('You joined the course {{ course.getTitle }}', 'en');
 $notification->setSubject('Hallo {{ user.getFullname }}', 'de');
 $notification->setText('Sie sind nun Mitglied in folgendem Kurs {{ course.getTitle }}', 'de');
 
-self::notification()->storeInstance($notification);
+self::notification(Notification::class, NotificationLanguage::class)->storeInstance($notification);
 ```
 
-### Duplicate a notification
+##### Duplicate a notification
 ```php
-$duplicated_notification = self::notification()->duplicateNotification($notification, self::plugin());
+$duplicated_notification = self::notification(Notification::class, NotificationLanguage::class)->duplicateNotification($notification, self::plugin());
 ```
 
-### Delete a notification
+##### Delete a notification
 ```php
-self::notification()->deleteNotification($notification);
+self::notification(Notification::class, NotificationLanguage::class)->deleteNotification($notification);
 ```
 
-### Get parsed subject and text of a notification
+##### Get parsed subject and text of a notification
 You can get the parsed subject and text from a notification, for example to display it on screen.
 
 ```php
@@ -212,13 +215,39 @@ $subject = self::parser()->parseSubject($parser, $notification, $placeholders);
 $text = self::parser()->parseText($parser, $notification, $placeholders);
 ```
 
-### UI
+##### UI
+ActiveRecordConfigGUI
+```php
+/**
+ * @var array
+ */
+protected static $tabs = [
+	Notifications4PluginCtrl::TAB_NOTIFICATIONS => [
+		Ctrl::class,
+		Ctrl::CMD_LIST_NOTIFICATIONS
+	]
+];
+```
+
+```php
+// Table
+$table = self::notificationUI()->withPlugin(self::plugin())->notificationTable($this, $parent_cmd, function () {
+			return self::notification(Notification::class, NotificationLanguage::class)->getArrayForTable($notifications);
+		});
+		
+// Form
+$form = self::notificationUI()->withPlugin(self::plugin())->notificationForm($this, $notification);
+
+// Delete confirmation
+$confirm = self::notificationUI()->withPlugin(self::plugin())->notificationDeleteConfirmation($this, $notification);
+
 // Template selection
 self::notificationUI()->withPlugin(self::plugin())->templateSelection($notifications, 'post_key', array(
   'user' => 'object ' . ilObjUser::class,
   'course' => 'object ' . ilObjCourse::class,
   'id' => 'int'
 ));
+```
 
 ### Dependencies
 * ILIAS 5.3 or ILIAS 5.4

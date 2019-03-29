@@ -162,8 +162,7 @@ abstract class AbstractCtrl {
 	 *
 	 */
 	public function editNotification()/*: void*/ {
-		$notification_id = intval(filter_input(INPUT_GET, self::GET_PARAM));
-		$notification = self::notification(static::NOTIFICATION_CLASS_NAME, static::LANGUAGE_CLASS_NAME)->getNotificationById($notification_id);
+		$notification = $this->getNotification();
 
 		$form = $this->getNotificationForm($notification);
 
@@ -175,8 +174,7 @@ abstract class AbstractCtrl {
 	 *
 	 */
 	public function updateNotification()/*: void*/ {
-		$notification_id = intval(filter_input(INPUT_GET, self::GET_PARAM));
-		$notification = self::notification(static::NOTIFICATION_CLASS_NAME, static::LANGUAGE_CLASS_NAME)->getNotificationById($notification_id);
+		$notification = $this->getNotification();
 
 		$form = $this->getNotificationForm($notification);
 
@@ -200,8 +198,7 @@ abstract class AbstractCtrl {
 	 *
 	 */
 	public function duplicateNotification()/*: void*/ {
-		$notification_id = intval(filter_input(INPUT_GET, self::GET_PARAM));
-		$notification = self::notification(static::NOTIFICATION_CLASS_NAME, static::LANGUAGE_CLASS_NAME)->getNotificationById($notification_id);
+		$notification = $this->getNotification();
 
 		$cloned_notification = self::notification(static::NOTIFICATION_CLASS_NAME, static::LANGUAGE_CLASS_NAME)
 			->duplicateNotification($notification, self::plugin());
@@ -219,8 +216,7 @@ abstract class AbstractCtrl {
 	 *
 	 */
 	public function deleteNotificationConfirm()/*: void*/ {
-		$notification_id = intval(filter_input(INPUT_GET, self::GET_PARAM));
-		$notification = self::notification(static::NOTIFICATION_CLASS_NAME, static::LANGUAGE_CLASS_NAME)->getNotificationById($notification_id);
+		$notification = $this->getNotification();
 
 		$confirmation = $this->getNotificationDeleteConfirmation($notification);
 
@@ -232,8 +228,7 @@ abstract class AbstractCtrl {
 	 *
 	 */
 	public function deleteNotification()/*: void*/ {
-		$notification_id = intval(filter_input(INPUT_GET, self::GET_PARAM));
-		$notification = self::notification(static::NOTIFICATION_CLASS_NAME, static::LANGUAGE_CLASS_NAME)->getNotificationById($notification_id);
+		$notification = $this->getNotification();
 
 		self::notification(static::NOTIFICATION_CLASS_NAME, static::LANGUAGE_CLASS_NAME)->deleteNotification($notification);
 
@@ -273,6 +268,16 @@ abstract class AbstractCtrl {
 	 */
 	protected function getNotificationDeleteConfirmation(AbstractNotification $notification): ilConfirmationGUI {
 		return self::notificationUI()->withPlugin(self::plugin())->notificationDeleteConfirmation($this, $notification);
+	}
+
+
+	/**
+	 * @return AbstractNotification
+	 */
+	protected function getNotification(): AbstractNotification {
+		$notification_id = intval(filter_input(INPUT_GET, self::GET_PARAM));
+
+		return self::notification(static::NOTIFICATION_CLASS_NAME, static::LANGUAGE_CLASS_NAME)->getNotificationById($notification_id);
 	}
 
 
