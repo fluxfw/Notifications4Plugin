@@ -1,6 +1,6 @@
 {
   "name": "srag/notifications4plugin",
-  "description": "",
+  "description": "This library offers a quick and easy way to create and send notifications in any language. The notifications are usually configured in the config screen of Notifications4Plugins and can then be sent for instance as an email by other plugins dynamic",
   "type": "library",
   "keywords": [
     "ILIAS",
