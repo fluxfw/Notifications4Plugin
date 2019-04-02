@@ -9,6 +9,7 @@ use srag\DIC\DICTrait;
 use srag\Notifications4Plugin\Notification\Language\AbstractNotificationLanguage;
 use srag\Notifications4Plugin\Notification\Language\Repository as NotificationLanguageRepository;
 use srag\Notifications4Plugin\Notification\Repository as NotificationRepository;
+use srag\Notifications4Plugin\Parser\twigParser;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
@@ -126,7 +127,7 @@ abstract class AbstractNotification extends ActiveRecord {
 	 * @con_fieldtype    text
 	 * @con_is_notnull   true
 	 */
-	protected $parser = "";
+	protected $parser = twigParser::class;
 	/**
 	 * @var ilDateTime
 	 *
