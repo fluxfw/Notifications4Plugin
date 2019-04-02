@@ -39,7 +39,7 @@ final class Repository {
 	/**
 	 * @var array
 	 */
-	protected static $parsers = [
+	protected $parsers = [
 		twigParser::class => twigParser::NAME
 	];
 
@@ -49,6 +49,16 @@ final class Repository {
 	 */
 	private function __construct() {
 
+	}
+
+
+	/**
+	 * @param Parser $parser
+	 */
+	public function addParser(Parser $parser) {
+		$parser_class = get_class($parser);
+
+		$this->parsers[$parser_class] = $parser_class::NAME;
 	}
 
 
@@ -64,7 +74,7 @@ final class Repository {
 	 * @return Parser[]
 	 */
 	public function getPossibleParsers(): array {
-		return self::$parsers;
+		return $this->parsers;
 	}
 
 
