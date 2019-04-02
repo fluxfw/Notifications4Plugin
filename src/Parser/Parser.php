@@ -15,6 +15,13 @@ use srag\Notifications4Plugin\Exception\Notifications4PluginException;
 interface Parser {
 
 	/**
+	 * @var string
+	 *
+	 * @abstract
+	 */
+	//const NAME = "";
+
+	/**
 	 * @param string $text
 	 * @param array  $placeholders
 	 *
