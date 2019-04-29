@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.2.5]
+- Change version number to match old global plugin version
+
 ## [0.3.4]
 - Disable change name after create a notification
 
