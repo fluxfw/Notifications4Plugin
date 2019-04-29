@@ -228,7 +228,7 @@ final class Repository {
 					$notification->setDescription($row["description"]);
 					$notification->setDefaultLanguage($row["default_language"]);
 
-					if ($row["parser"] === "srag\Notifications4Plugin\Notifications4Plugins\Parser\\twigParser") {
+					if ($row["parser"] === "srag\\Notifications4Plugin\\Notifications4Plugins\\Parser\\twigParser") {
 						$notification->setParser(twigParser::class);
 					} else {
 						$notification->setParser($row["parser"]);
