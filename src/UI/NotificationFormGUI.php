@@ -129,7 +129,8 @@ class NotificationFormGUI extends ObjectPropertyFormGUI {
 			] : []) + [
 				"name" => [
 					self::PROPERTY_CLASS => ilTextInputGUI::class,
-					self::PROPERTY_REQUIRED => true
+					self::PROPERTY_REQUIRED => true,
+					self::PROPERTY_DISABLED => (!empty($this->object->getId()))
 				],
 				"title" => [
 					self::PROPERTY_CLASS => ilTextInputGUI::class,
@@ -179,6 +180,12 @@ class NotificationFormGUI extends ObjectPropertyFormGUI {
 		switch (true) {
 			case ($key === "id"):
 			case (strpos($key, "language") === 0):
+				break;
+
+			case ($key === "name"):
+				if (!empty($this->object->getId())) {
+					parent::storeValue($key, $value);
+				}
 				break;
 
 			case ($key === "subject"):
