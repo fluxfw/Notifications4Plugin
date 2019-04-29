@@ -1,7 +1,8 @@
 # Changelog
 
-## [x]
-- Fix summer/winter time
+## [0.3.0]
+- Supports migrate from old global plugin
+- Fix summer/winter time in `vcalendarSender`
 
 ## [0.2.2]
 - Fix reset offset
