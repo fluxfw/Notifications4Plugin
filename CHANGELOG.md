@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.3.4]
+- Disable change name after create a notification
+
 ## [0.3.3]
 - Disable change name after create a notification
 

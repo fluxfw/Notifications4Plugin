@@ -128,9 +128,8 @@ class NotificationFormGUI extends ObjectPropertyFormGUI {
 				]
 			] : []) + [
 				"name" => [
-					self::PROPERTY_CLASS => ilTextInputGUI::class,
-					self::PROPERTY_REQUIRED => true,
-					self::PROPERTY_DISABLED => (!empty($this->object->getId()))
+					self::PROPERTY_CLASS => (empty($this->object->getId()) ? ilTextInputGUI::class : ilNonEditableValueGUI::class,
+					self::PROPERTY_REQUIRED => true
 				],
 				"title" => [
 					self::PROPERTY_CLASS => ilTextInputGUI::class,
