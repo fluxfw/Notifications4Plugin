@@ -1,5 +1,8 @@
 # Changelog
 
+## [x]
+- Fix summer/winter time
+
 ## [0.2.2]
 - Fix reset offset
 
