@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.3.3]
+- New array syntax
+
 ## [4.3.2]
 - More interfaces
 

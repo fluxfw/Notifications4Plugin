@@ -28,6 +28,6 @@ interface RepositoryInterface {
 	 *
 	 * @throws Notifications4PluginException
 	 */
-	public function send(Sender $sender, Notification $notification, array $placeholders = array(), string $language = "")/*: void*/
+	public function send(Sender $sender, Notification $notification, array $placeholders = [], string $language = "")/*: void*/
 	;
 }

@@ -54,7 +54,7 @@ final class Repository implements RepositoryInterface {
 	/**
 	 * @inheritdoc
 	 */
-	public function send(Sender $sender, Notification $notification, array $placeholders = array(), string $language = "")/*: void*/ {
+	public function send(Sender $sender, Notification $notification, array $placeholders = [], string $language = "")/*: void*/ {
 		$parser = self::parser()->getParserForNotification($notification);
 
 		$sender->setSubject(self::parser()->parseSubject($parser, $notification, $placeholders, $language));
