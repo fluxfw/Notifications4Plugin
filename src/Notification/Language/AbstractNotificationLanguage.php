@@ -7,7 +7,9 @@ use arConnector;
 use ilDateTime;
 use srag\DIC\DICTrait;
 use srag\Notifications4Plugin\Notification\Language\Repository as NotificationLanguageRepository;
+use srag\Notifications4Plugin\Notification\Language\RepositoryInterface as NotificationLanguageRepositoryInterface;
 use srag\Notifications4Plugin\Notification\Repository as NotificationRepository;
+use srag\Notifications4Plugin\Notification\RepositoryInterface as NotificationRepositoryInterface;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
@@ -33,7 +35,7 @@ abstract class AbstractNotificationLanguage extends ActiveRecord implements Noti
 	/**
 	 * @inheritdoc
 	 */
-	protected static function notification(string $notification_class): NotificationRepository {
+	protected static function notification(string $notification_class): NotificationRepositoryInterface {
 		return NotificationRepository::getInstance($notification_class, static::class);
 	}
 
@@ -41,7 +43,7 @@ abstract class AbstractNotificationLanguage extends ActiveRecord implements Noti
 	/**
 	 * @inheritdoc
 	 */
-	protected static function notificationLanguage(): NotificationLanguageRepository {
+	protected static function notificationLanguage(): NotificationLanguageRepositoryInterface {
 		return NotificationLanguageRepository::getInstance(static::class);
 	}
 
