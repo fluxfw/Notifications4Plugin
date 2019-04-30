@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.3.1]
+- More interfaces
+
 ## [4.3.0]
 - More interfaces
 

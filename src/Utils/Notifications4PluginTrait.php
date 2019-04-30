@@ -26,7 +26,7 @@ trait Notifications4PluginTrait {
 	 * @param string $notification_class
 	 * @param string $language_class
 	 *
-	 * @return NotificationRepository
+	 * @return NotificationRepositoryInterface
 	 */
 	protected static function notification(string $notification_class, string $language_class): NotificationRepositoryInterface {
 		return NotificationRepository::getInstance($notification_class, $language_class);
@@ -36,7 +36,7 @@ trait Notifications4PluginTrait {
 	/**
 	 * @param string $language_class
 	 *
-	 * @return NotificationLanguageRepository
+	 * @return NotificationLanguageRepositoryInterface
 	 */
 	protected static function notificationLanguage(string $language_class): NotificationLanguageRepositoryInterface {
 		return NotificationLanguageRepository::getInstance($language_class);
@@ -44,7 +44,7 @@ trait Notifications4PluginTrait {
 
 
 	/**
-	 * @return UI
+	 * @return UIInterface
 	 */
 	protected static function notificationUI(): UIInterface {
 		return UI::getInstance();
@@ -52,7 +52,7 @@ trait Notifications4PluginTrait {
 
 
 	/**
-	 * @return ParserRepository
+	 * @return ParserRepositoryInterface
 	 */
 	protected static function parser(): ParserRepositoryInterface {
 		return ParserRepository::getInstance();
@@ -60,7 +60,7 @@ trait Notifications4PluginTrait {
 
 
 	/**
-	 * @return SenderRepository
+	 * @return SenderRepositoryInterface
 	 */
 	protected static function sender(): SenderRepositoryInterface {
 		return SenderRepository::getInstance();
