@@ -62,7 +62,7 @@ interface RepositoryInterface {
 	 *
 	 * @throws Notifications4PluginException
 	 */
-	public function parseSubject(Parser $parser, Notification $notification, array $placeholders = array(), string $language = ""): string;
+	public function parseSubject(Parser $parser, Notification $notification, array $placeholders = [], string $language = ""): string;
 
 
 	/**
@@ -75,5 +75,5 @@ interface RepositoryInterface {
 	 *
 	 * @throws Notifications4PluginException
 	 */
-	public function parseText(Parser $parser, Notification $notification, array $placeholders = array(), string $language = ""): string;
+	public function parseText(Parser $parser, Notification $notification, array $placeholders = [], string $language = ""): string;
 }

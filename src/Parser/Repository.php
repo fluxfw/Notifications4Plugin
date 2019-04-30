@@ -101,7 +101,7 @@ final class Repository implements RepositoryInterface {
 	/**
 	 * @inheritdoc
 	 */
-	public function parseSubject(Parser $parser, Notification $notification, array $placeholders = array(), string $language = ""): string {
+	public function parseSubject(Parser $parser, Notification $notification, array $placeholders = [], string $language = ""): string {
 		return $parser->parse($notification->getSubject($language), $placeholders);
 	}
 
@@ -109,7 +109,7 @@ final class Repository implements RepositoryInterface {
 	/**
 	 * @inheritdoc
 	 */
-	public function parseText(Parser $parser, Notification $notification, array $placeholders = array(), string $language = ""): string {
+	public function parseText(Parser $parser, Notification $notification, array $placeholders = [], string $language = ""): string {
 		return $parser->parse($notification->getText($language), $placeholders);
 	}
 }
