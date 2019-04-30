@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.3.4]
+- TAB_NOTIFICATION
+
 ## [4.3.3]
 - New array syntax
 
