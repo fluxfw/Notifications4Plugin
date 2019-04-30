@@ -3,10 +3,15 @@
 namespace srag\Notifications4Plugin\Utils;
 
 use srag\Notifications4Plugin\Notification\Language\Repository as NotificationLanguageRepository;
+use srag\Notifications4Plugin\Notification\Language\RepositoryInterface as NotificationLanguageRepositoryInterface;
 use srag\Notifications4Plugin\Notification\Repository as NotificationRepository;
+use srag\Notifications4Plugin\Notification\RepositoryInterface as NotificationRepositoryInterface;
 use srag\Notifications4Plugin\Parser\Repository as ParserRepository;
+use srag\Notifications4Plugin\Parser\RepositoryInterface as ParserRepositoryInterface;
 use srag\Notifications4Plugin\Sender\Repository as SenderRepository;
-use srag\Notifications4Plugin\UI\UI as NotificationUI;
+use srag\Notifications4Plugin\Sender\RepositoryInterface as SenderRepositoryInterface;
+use srag\Notifications4Plugin\UI\UI;
+use srag\Notifications4Plugin\UI\UIInterface;
 
 /**
  * Trait Notifications4PluginTrait
@@ -23,7 +28,7 @@ trait Notifications4PluginTrait {
 	 *
 	 * @return NotificationRepository
 	 */
-	protected static function notification(string $notification_class, string $language_class): NotificationRepository {
+	protected static function notification(string $notification_class, string $language_class): NotificationRepositoryInterface {
 		return NotificationRepository::getInstance($notification_class, $language_class);
 	}
 
@@ -33,23 +38,23 @@ trait Notifications4PluginTrait {
 	 *
 	 * @return NotificationLanguageRepository
 	 */
-	protected static function notificationLanguage(string $language_class): NotificationLanguageRepository {
+	protected static function notificationLanguage(string $language_class): NotificationLanguageRepositoryInterface {
 		return NotificationLanguageRepository::getInstance($language_class);
 	}
 
 
 	/**
-	 * @return NotificationUI
+	 * @return UI
 	 */
-	protected static function notificationUI(): NotificationUI {
-		return NotificationUI::getInstance();
+	protected static function notificationUI(): UIInterface {
+		return UI::getInstance();
 	}
 
 
 	/**
 	 * @return ParserRepository
 	 */
-	protected static function parser(): ParserRepository {
+	protected static function parser(): ParserRepositoryInterface {
 		return ParserRepository::getInstance();
 	}
 
@@ -57,7 +62,7 @@ trait Notifications4PluginTrait {
 	/**
 	 * @return SenderRepository
 	 */
-	protected static function sender(): SenderRepository {
+	protected static function sender(): SenderRepositoryInterface {
 		return SenderRepository::getInstance();
 	}
 }

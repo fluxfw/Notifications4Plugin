@@ -250,15 +250,15 @@ protected static $tabs = [
 
 ```php
 // Table
-$table = self::notificationUI()->withPlugin(self::plugin())->notificationTable($this, $parent_cmd, function () {
+$table = self::notificationUI()->withPlugin(self::plugin())->withCtrlClass($this)->notificationTable($parent_cmd, function () {
 			return self::notification(Notification::class, NotificationLanguage::class)->getArrayForTable($notifications);
 		});
 		
 // Form
-$form = self::notificationUI()->withPlugin(self::plugin())->notificationForm($this, $notification);
+$form = self::notificationUI()->withPlugin(self::plugin())->withCtrlClass($this)->notificationForm($notification);
 
 // Delete confirmation
-$confirm = self::notificationUI()->withPlugin(self::plugin())->notificationDeleteConfirmation($this, $notification);
+$confirm = self::notificationUI()->withPlugin(self::plugin())->withCtrlClass($this)->notificationDeleteConfirmation($notification);
 
 // Template selection
 self::notificationUI()->withPlugin(self::plugin())->templateSelection($notifications, 'post_key', array(

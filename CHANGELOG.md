@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.3.0]
+- More interfaces
+
 ## [4.2.6]
 - Disable change name after create a notification
 
