@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.3.5]
+- Optimizations
+
 ## [4.3.4]
 - TAB_NOTIFICATION
 

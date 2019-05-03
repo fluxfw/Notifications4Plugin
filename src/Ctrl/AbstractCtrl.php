@@ -252,7 +252,7 @@ abstract class AbstractCtrl implements CtrlInterface {
 	 * @return NotificationsTableGUI
 	 */
 	protected function getNotificationsTable(string $parent_cmd = self::CMD_LIST_NOTIFICATIONS): NotificationsTableGUI {
-		return self::notificationUI()->withPlugin(self::plugin())->withCtrlClass($this)->notificationTable($parent_cmd, function () {
+		return self::notificationUI()->withPlugin(self::plugin())->withCtrlClass($this)->notificationTable($parent_cmd, function (): array {
 			return self::notification()->getArrayForTable($this->getNotifications());
 		});
 	}

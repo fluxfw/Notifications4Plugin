@@ -112,7 +112,9 @@ class NotificationsTableGUI extends TableGUI {
 	 * @inheritdoc
 	 */
 	protected function initData()/*: void*/ {
-		$this->setData(($this->getNotifications)());
+		$getNotifications = $this->getNotifications;
+
+		$this->setData($getNotifications());
 	}
 
 
