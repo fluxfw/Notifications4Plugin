@@ -152,7 +152,7 @@ final class Repository implements RepositoryInterface {
 		 * @var Notification|null $notification
 		 */
 
-		$notification = $this->notification_class::where([ "id" => $id ])->first();
+		$notification = call_user_func($this->notification_class . "::where", [ "id" => $id ])->first();
 
 		return $notification;
 	}
@@ -166,7 +166,7 @@ final class Repository implements RepositoryInterface {
 		 * @var Notification|null $notification
 		 */
 
-		$notification = $this->notification_class::where([ "name" => $name ])->first();
+		call_user_func($this->notification_class . "::where", [ "name" => $name ])->first();
 
 		return $notification;
 	}
@@ -180,7 +180,7 @@ final class Repository implements RepositoryInterface {
 		 * @var Notification[] $notifications
 		 */
 
-		$notifications = $this->notification_class::orderBy("title", "ASC")->get();
+		$notifications = call_user_func($this->notification_class . "::orderBy", "title", "ASC")->get();
 
 		return $notifications;
 	}

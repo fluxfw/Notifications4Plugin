@@ -91,7 +91,7 @@ final class Repository implements RepositoryInterface {
 		 * @var NotificationLanguage|null $language
 		 */
 
-		$language = $this->language_class::where([ "id" => $id ])->first();
+		$language = call_user_func($this->language_class . "::where", [ "id" => $id ])->first();
 
 		return $language;
 	}
@@ -105,7 +105,7 @@ final class Repository implements RepositoryInterface {
 		 * @var NotificationLanguage $l
 		 */
 
-		$l = $this->language_class::where([ "notification_id" => $notification_id, "language" => $language ])->first();
+		$l = call_user_func($this->language_class . "::where", [ "notification_id" => $notification_id, "language" => $language ])->first();
 
 		if ($l === null) {
 			$l = $this->factory()->newInstance();
@@ -127,7 +127,7 @@ final class Repository implements RepositoryInterface {
 		 * @var NotificationLanguage[] $array
 		 */
 
-		$array = $this->language_class::where([ "notification_id" => $notification_id ])->get();
+		$array = call_user_func($this->language_class . "::where", [ "notification_id" => $notification_id ])->get();
 
 		$languages = [];
 
