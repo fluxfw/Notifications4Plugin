@@ -166,7 +166,7 @@ final class Repository implements RepositoryInterface {
 		 * @var Notification|null $notification
 		 */
 
-		call_user_func($this->notification_class . "::where", [ "name" => $name ])->first();
+		$notification = call_user_func($this->notification_class . "::where", [ "name" => $name ])->first();
 
 		return $notification;
 	}
