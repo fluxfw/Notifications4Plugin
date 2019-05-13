@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.3.9]
+- NotificationLanguageRepository::getLanguages
+
 ## [4.3.8]
 - NotificationLanguageRepository::getLanguages
 
