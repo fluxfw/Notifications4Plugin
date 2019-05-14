@@ -170,7 +170,7 @@ $sender = self::sender()->factory()->vcalendar(...);
 ```
 
 ```php
-// Prepare placeholders, note that the keys are the same like deklared in the notification template
+// Prepare placeholders, note that the keys are the same like declared in the notification template
 $placeholders = [
   'user' => new ilObjUser(6),
   'course' => new ilObjCourse(12345)
