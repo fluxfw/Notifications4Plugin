@@ -3,6 +3,7 @@
 namespace srag\Notifications4Plugin\Notification;
 
 use ilDateTime;
+use ilDBConstants;
 use srag\DIC\DICTrait;
 use srag\DIC\Plugin\PluginInterface;
 use srag\Notifications4Plugin\Ctrl\CtrlInterface;
@@ -206,7 +207,7 @@ final class Repository implements RepositoryInterface {
 			if (self::dic()->database()->tableExists($global_plugin_notification_table_name)
 				&& self::dic()->database()->tableExists($global_plugin_notification_language_table_name)) {
 				$result = self::dic()->database()->queryF("SELECT * FROM " . $global_plugin_notification_table_name
-					. " WHERE name=%s", [ "text" ], [ $name ]);
+					. " WHERE name=%s", [ ilDBConstants::T_TEXT ], [ $name ]);
 
 				if (($row = $result->fetchAssoc()) !== false) {
 
@@ -229,7 +230,7 @@ final class Repository implements RepositoryInterface {
 					}
 
 					$result2 = self::dic()->database()->queryF("SELECT * FROM " . $global_plugin_notification_language_table_name
-						. " WHERE notification_id=%s", [ "integer" ], [ $row["id"] ]);
+						. " WHERE notification_id=%s", [ ilDBConstants::T_INTEGER ], [ $row["id"] ]);
 
 					while (($row2 = $result2->fetchAssoc()) !== false) {
 						$notification->setSubject($row2["subject"], $row2["language"]);
