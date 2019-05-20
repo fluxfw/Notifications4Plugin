@@ -64,7 +64,7 @@ class NotificationsTableGUI extends TableGUI {
 
 		switch ($column) {
 			case "languages":
-				implode(", ", array_map(function (NotificationLanguage $language): string {
+				$value = implode(", ", array_map(function (NotificationLanguage $language): string {
 					return $language->getLanguage();
 				}, $value));
 				break;
