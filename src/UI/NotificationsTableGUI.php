@@ -7,6 +7,7 @@ use srag\CustomInputGUIs\TableGUI\TableGUI;
 use srag\DIC\Plugin\PluginInterface;
 use srag\Notifications4Plugin\Ctrl\CtrlInterface;
 use srag\Notifications4Plugin\Notification\Language\NotificationLanguage;
+use srag\Notifications4Plugin\Notification\Notification;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
@@ -55,6 +56,8 @@ class NotificationsTableGUI extends TableGUI {
 
 	/**
 	 * @inheritdoc
+	 *
+	 * @param Notification $row
 	 */
 	protected function getColumnValue(/*string*/ $column, /*Notification*/ $row, /*int*/ $format = self::DEFAULT_FORMAT): string {
 		$value = Items::getter($row, $column);
@@ -165,10 +168,12 @@ class NotificationsTableGUI extends TableGUI {
 
 
 	/**
-	 * @param array $row
+	 * @inheritdoc
+	 *
+	 * @param Notification $row
 	 */
-	protected function fillRow(/*array*/ $row)/*: void*/ {
-		self::dic()->ctrl()->setParameter($this->parent_obj, CtrlInterface::GET_PARAM, $row["id"]);
+	protected function fillRow(/*Notification*/ $row)/*: void*/ {
+		self::dic()->ctrl()->setParameter($this->parent_obj, CtrlInterface::GET_PARAM, $row->getId());
 
 		parent::fillRow($row);
 
