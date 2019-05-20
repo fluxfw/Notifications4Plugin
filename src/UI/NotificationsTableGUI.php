@@ -29,6 +29,10 @@ class NotificationsTableGUI extends TableGUI {
 	 * @var callable
 	 */
 	protected $getNotifications;
+	/**
+	 * @var callable
+	 */
+	protected $getNotificationsCount;
 
 
 	/**
@@ -38,10 +42,12 @@ class NotificationsTableGUI extends TableGUI {
 	 * @param CtrlInterface   $parent
 	 * @param string          $parent_cmd
 	 * @param callable        $getNotifications
+	 * @param callable        $getNotificationsCount
 	 */
-	public function __construct(PluginInterface $plugin, CtrlInterface $parent, string $parent_cmd, callable $getNotifications) {
+	public function __construct(PluginInterface $plugin, CtrlInterface $parent, string $parent_cmd, callable $getNotifications, callable $getNotificationsCount) {
 		$this->plugin = $plugin;
 		$this->getNotifications = $getNotifications;
+		$this->getNotificationsCount = $getNotificationsCount;
 
 		parent::__construct($parent, $parent_cmd);
 	}
@@ -99,9 +105,6 @@ class NotificationsTableGUI extends TableGUI {
 		parent::initColumns();
 
 		$this->addColumn($this->txt("actions"));
-
-		$this->setDefaultOrderField("title");
-		$this->setDefaultOrderDirection("asc");
 	}
 
 
@@ -119,8 +122,21 @@ class NotificationsTableGUI extends TableGUI {
 	 */
 	protected function initData()/*: void*/ {
 		$getNotifications = $this->getNotifications;
+		$getNotificationsCount = $this->getNotificationsCount;
 
-		$this->setData($getNotifications());
+		$this->setExternalSegmentation(true);
+		$this->setExternalSorting(true);
+
+		$this->setDefaultOrderField("title");
+		$this->setDefaultOrderDirection("asc");
+
+		// Fix stupid ilTable2GUI !!! ...
+		$this->determineLimit();
+		$this->determineOffsetAndOrder();
+
+		$this->setData($getNotifications($this->getOrderField(), $this->getOrderDirection(), intval($this->getOffset()), intval($this->getLimit())));
+
+		$this->setMaxCount($getNotificationsCount());
 	}
 
 
