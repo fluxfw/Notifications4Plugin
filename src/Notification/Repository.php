@@ -175,7 +175,7 @@ final class Repository implements RepositoryInterface {
 	 */
 	public function getNotificationsCount(): int {
 
-		$sql = 'SELECT COUNT(log_id) AS count';
+		$sql = 'SELECT COUNT(id) AS count';
 
 		$sql .= $this->getNotificationsQuery(null, null, null, null);
 
