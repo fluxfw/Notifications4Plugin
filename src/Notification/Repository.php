@@ -133,6 +133,8 @@ final class Repository implements RepositoryInterface {
 			"fromDB"
 		]);
 
+		$notification->setLanguages(self::notificationLanguage($this->language_class)->getLanguagesForNotification($notification->getId()));
+
 		return $notification;
 	}
 
@@ -147,6 +149,8 @@ final class Repository implements RepositoryInterface {
 		$notification = self::dic()->database()->fetchObjectCallback(self::dic()->database()->queryF('SELECT * FROM ' . self::dic()->database()
 				->quoteIdentifier($this->notification_class::TABLE_NAME)
 			. ' WHERE name=%s', [ ilDBConstants::T_TEXT ], [ $name ]), [ $this->factory(), "fromDB" ]);
+
+		$notification->setLanguages(self::notificationLanguage($this->language_class)->getLanguagesForNotification($notification->getId()));
 
 		return $notification;
 	}
@@ -165,6 +169,10 @@ final class Repository implements RepositoryInterface {
 		 * @var Notification[] $notifications
 		 */
 		$notifications = self::dic()->database()->fetchAllCallback(self::dic()->database()->query($sql), [ $this->factory(), "fromDB" ]);
+
+		foreach ($notifications as $notification) {
+			$notification->setLanguages(self::notificationLanguage($this->language_class)->getLanguagesForNotification($notification->getId()));
+		}
 
 		return $notifications;
 	}

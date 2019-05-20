@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.4.4]
+- Fixes
+
 ## [4.4.3]
 - Fixes
 
