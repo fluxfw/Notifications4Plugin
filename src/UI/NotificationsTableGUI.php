@@ -2,9 +2,11 @@
 
 namespace srag\Notifications4Plugin\UI;
 
+use srag\CustomInputGUIs\PropertyFormGUI\Items\Items;
 use srag\CustomInputGUIs\TableGUI\TableGUI;
 use srag\DIC\Plugin\PluginInterface;
 use srag\Notifications4Plugin\Ctrl\CtrlInterface;
+use srag\Notifications4Plugin\Notification\Language\NotificationLanguage;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
@@ -48,17 +50,21 @@ class NotificationsTableGUI extends TableGUI {
 	/**
 	 * @inheritdoc
 	 */
-	protected function getColumnValue(/*string*/
-		$column, /*array*/
-		$row, /*int*/
-		$format = self::DEFAULT_FORMAT): string {
+	protected function getColumnValue(/*string*/ $column, /*Notification*/ $row, /*int*/ $format = self::DEFAULT_FORMAT): string {
+		$value = Items::getter($row, $column);
+
 		switch ($column) {
+			case "languages":
+				implode(", ", array_map(function (NotificationLanguage $language): string {
+					return $language->getLanguage();
+				}, $value));
+				break;
+
 			default:
-				$column = $row[$column];
 				break;
 		}
 
-		return strval($column);
+		return strval($value);
 	}
 
 
@@ -145,8 +151,7 @@ class NotificationsTableGUI extends TableGUI {
 	/**
 	 * @param array $row
 	 */
-	protected function fillRow(/*array*/
-		$row)/*: void*/ {
+	protected function fillRow(/*array*/ $row)/*: void*/ {
 		self::dic()->ctrl()->setParameter($this->parent_obj, CtrlInterface::GET_PARAM, $row["id"]);
 
 		parent::fillRow($row);
@@ -165,9 +170,7 @@ class NotificationsTableGUI extends TableGUI {
 	/**
 	 * @inheritdoc
 	 */
-	public function txt(/*string*/
-		$key,/*?string*/
-		$default = null): string {
+	public function txt(/*string*/ $key,/*?string*/ $default = null): string {
 		if ($default !== null) {
 			return $this->plugin->translate($key, self::LANG_MODULE, [], true, "", $default);
 		} else {
