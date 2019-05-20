@@ -1,6 +1,9 @@
 # Changelog
 
-## [4.4]
+## [4.4.1]
+- Fixes
+
+## [4.4.0]
 - Use database
 
 ## [4.3.11]
