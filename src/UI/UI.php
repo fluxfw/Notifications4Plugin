@@ -4,6 +4,7 @@ namespace srag\Notifications4Plugin\UI;
 
 use ilConfirmationGUI;
 use ilSelectInputGUI;
+use ilUtil;
 use srag\CustomInputGUIs\PropertyFormGUI\PropertyFormGUI;
 use srag\DIC\DICTrait;
 use srag\DIC\Plugin\PluginInterface;
