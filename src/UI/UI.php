@@ -133,7 +133,7 @@ final class UI implements UIInterface {
 	/**
 	 * @inheritdoc
 	 */
-	public function templateSelection(array $notifications, string $post_key, array $placeholder_types): array {
+	public function templateSelection(array $notifications, string $post_key): array {
 		return [
 			$post_key => [
 				PropertyFormGUI::PROPERTY_CLASS => ilSelectInputGUI::class,
@@ -145,7 +145,7 @@ final class UI implements UIInterface {
 					$this->getPlugin()
 						->translate("template_selection_info", CtrlInterface::LANG_MODULE_NOTIFICATIONS4PLUGIN, [ CtrlInterface::NAME ]),
 					"<br><br>",
-					self::dic()->ui()->factory()->listing()->descriptive($placeholder_types)
+					self::dic()->ui()->factory()->listing()->descriptive($this->ctrl_class->getPlaceholderTypes())
 				])
 			]
 		];
