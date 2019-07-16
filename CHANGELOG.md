@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.5.3]
+- Display placeholder types in notification form
+
 ## [4.5.2]
 - Display placeholder types in notification form
 
