@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.5.0]
+- Display placeholder types in notification form
+
 ## [4.4.9]
 - Fixes
 
