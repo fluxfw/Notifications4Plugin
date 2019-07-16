@@ -267,8 +267,6 @@ abstract class AbstractCtrl implements CtrlInterface {
 	 * @return NotificationFormGUI
 	 */
 	protected function getNotificationForm(Notification $notification): NotificationFormGUI {
-		ilUtil::sendInfo(current(self::notificationUI()->withPlugin(self::plugin())->withCtrlClass($this)->templateSelection([], ""))["setInfo"]);
-
 		return self::notificationUI()->withPlugin(self::plugin())->withCtrlClass($this)->notificationForm($notification);
 	}
 

@@ -114,6 +114,12 @@ final class UI implements UIInterface {
 	 * @inheritdoc
 	 */
 	public function notificationForm(Notification $notification): NotificationFormGUI {
+		ilUtil::sendInfo(self::output()->getHTML([
+			$this->getPlugin()->translate("placeholder_types_info", CtrlInterface::LANG_MODULE_NOTIFICATIONS4PLUGIN, [ CtrlInterface::NAME ]),
+			"<br><br>",
+			self::dic()->ui()->factory()->listing()->descriptive($this->ctrl_class->getPlaceholderTypes())
+		]));
+
 		$form = new NotificationFormGUI($this->getPlugin(), $this->ctrl_class, $notification);
 
 		return $form;
@@ -141,12 +147,7 @@ final class UI implements UIInterface {
 				PropertyFormGUI::PROPERTY_OPTIONS => [ "" => "" ] + $notifications,
 				"setTitle" => $this->getPlugin()
 					->translate("template_selection", CtrlInterface::LANG_MODULE_NOTIFICATIONS4PLUGIN, [ CtrlInterface::NAME ]),
-				"setInfo" => self::output()->getHTML([
-					$this->getPlugin()
-						->translate("template_selection_info", CtrlInterface::LANG_MODULE_NOTIFICATIONS4PLUGIN, [ CtrlInterface::NAME ]),
-					"<br><br>",
-					self::dic()->ui()->factory()->listing()->descriptive($this->ctrl_class->getPlaceholderTypes())
-				])
+				"setInfo" => ""
 			]
 		];
 	}
