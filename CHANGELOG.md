@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.5.4]
+- Fix delete notifcations
+
 ## [4.5.3]
 - Display placeholder types in notification form
 
