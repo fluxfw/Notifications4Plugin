@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.5.5]
+- Allows template selection is not required
+
 ## [4.5.4]
 - Fix delete notifcations
 
