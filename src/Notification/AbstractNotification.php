@@ -13,6 +13,7 @@ use srag\Notifications4Plugin\Notification\Repository as NotificationRepository;
 use srag\Notifications4Plugin\Notification\RepositoryInterface as NotificationRepositoryInterface;
 use srag\Notifications4Plugin\Parser\twigParser;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
+use Throwable;
 
 /**
  * Class AbstractNotification
