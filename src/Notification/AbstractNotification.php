@@ -190,6 +190,7 @@ abstract class AbstractNotification extends ActiveRecord implements Notification
     public function __construct(/*int*/ $primary_key_value = 0, /*?*/ arConnector $connector = null)
     {
         //parent::__construct($primary_key_value, $connector);
+        $this->default_language = self::dic()->language()->getLangKey();
     }
 
 
