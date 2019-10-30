@@ -1,5 +1,8 @@
 # Changelog
 
+## [4.6.1]
+- Adjust `default_language_info`
+
 ## [4.6.0]
 - Optimize subject and text input/edit - Add an inline tab for all available languages (No need to enter manually needed)
 
