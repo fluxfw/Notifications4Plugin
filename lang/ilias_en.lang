@@ -4,7 +4,7 @@ notifications4plugin_add_notification#:#Add notification
 notifications4plugin_added_notification#:#Notification %s added
 notifications4plugin_cancel#:#Cancel
 notifications4plugin_default_language#:#Default language
-notifications4plugin_default_language_info#:#This language is substituted if you try to load a non-existing language or no language is provided
+notifications4plugin_default_language_info#:#This language is used if no spec. language is specified on sending of the notification
 notifications4plugin_delete#:#Delete
 notifications4plugin_delete_notification_confirm#:#Are you really want to delete the notification: %s ?
 notifications4plugin_deleted_notification#:#Notification %s deleted

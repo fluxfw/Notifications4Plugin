@@ -4,7 +4,7 @@ notifications4plugin_add_notification#:#Benachrichtigung hinzufügen
 notifications4plugin_added_notification#:#Benachrichtigung %s hinzugefügt
 notifications4plugin_cancel#:#Abbrechen
 notifications4plugin_default_language#:#Standard-Sprache
-notifications4plugin_default_language_info#:#Diese Sprache wird ersetzt, wenn Sie versuchen, eine nicht vorhandene Sprache zu laden, oder wenn keine Sprache bereitgestellt wird
+notifications4plugin_default_language_info#:#Diese Sprache wird verwendet, wenn beim Senden der Benachrichtigung keine spez. Sprache angegeben wird
 notifications4plugin_delete#:#Löschen
 notifications4plugin_delete_notification_confirm#:#Möchten Sie die Benachrichtigung wirklich entfernen: %s ?
 notifications4plugin_deleted_notification#:#Benachrichtigung %s gelöscht
