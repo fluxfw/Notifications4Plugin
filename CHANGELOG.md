@@ -1,7 +1,7 @@
 # Changelog
 
 ## [5.0.0]
-- Improvments
+- Improvments - new structur
 
 ## [4.6.1]
 - Adjust `default_language_info`
