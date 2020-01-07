@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.1.2]
+- Fix dropdown usability
+
 ## [5.1.1]
 - Fix
 
