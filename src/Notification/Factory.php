@@ -3,9 +3,7 @@
 namespace srag\Notifications4Plugin\Notification;
 
 use ilDateTime;
-use ilUtil;
 use srag\DIC\DICTrait;
-use srag\Notifications4Plugin\Ctrl\CtrlInterface;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 use stdClass;
 
@@ -101,12 +99,6 @@ final class Factory implements FactoryInterface
      */
     public function newFormInstance(NotificationCtrl $parent, NotificationInterface $notification) : NotificationFormGUI
     {
-        ilUtil::sendInfo(self::output()->getHTML([
-            self::notifications4plugin()->getPlugin()->translate("placeholder_types_info", NotificationsCtrl::LANG_MODULE),
-            "<br><br>",
-            self::dic()->ui()->factory()->listing()->descriptive(self::notifications4plugin()->getPlaceholderTypes())
-        ]));
-
         $form = new NotificationFormGUI($parent, $notification);
 
         return $form;
