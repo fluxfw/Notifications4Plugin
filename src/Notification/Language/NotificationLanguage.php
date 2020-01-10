@@ -157,7 +157,7 @@ class NotificationLanguage extends ActiveRecord
 
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      *
      * @deprecated
      */
@@ -168,7 +168,7 @@ class NotificationLanguage extends ActiveRecord
 
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      *
      * @deprecated
      */
