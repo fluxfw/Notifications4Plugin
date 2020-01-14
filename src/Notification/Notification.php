@@ -40,7 +40,7 @@ class Notification extends ActiveRecord implements NotificationInterface
      */
     public function getConnectorContainerName() : string
     {
-        return static::getTableName();
+        return self::getTableName();
     }
 
 
@@ -51,7 +51,7 @@ class Notification extends ActiveRecord implements NotificationInterface
      */
     public static function returnDbTableName() : string
     {
-        return static::getTableName();
+        return self::getTableName();
     }
 
 
