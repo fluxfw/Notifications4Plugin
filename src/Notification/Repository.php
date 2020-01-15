@@ -6,7 +6,6 @@ use ilDateTime;
 use ilDBConstants;
 use srag\CustomInputGUIs\TabsInputGUI\MultilangualTabsInputGUI;
 use srag\DIC\DICTrait;
-use srag\DIC\Plugin\PluginInterface;
 use srag\Notifications4Plugin\Notification\Language\NotificationLanguage;
 use srag\Notifications4Plugin\Parser\twigParser;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
@@ -42,20 +41,6 @@ final class Repository implements RepositoryInterface
 
         return self::$instance;
     }
-
-
-    /**
-     * @var string
-     */
-    protected $table_name_prefix = "";
-    /**
-     * @var PluginInterface
-     */
-    protected $plugin;
-    /**
-     * @var array
-     */
-    protected $placeholder_types;
 
 
     /**

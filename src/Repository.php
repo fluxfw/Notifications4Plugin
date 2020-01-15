@@ -44,6 +44,20 @@ final class Repository implements RepositoryInterface
 
 
     /**
+     * @var string
+     */
+    protected $table_name_prefix = "";
+    /**
+     * @var PluginInterface
+     */
+    protected $plugin;
+    /**
+     * @var array
+     */
+    protected $placeholder_types;
+
+
+    /**
      * Repository constructor
      */
     private function __construct()
