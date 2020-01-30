@@ -11,9 +11,9 @@ notifications4plugin_duplicate#:#Duplicate
 notifications4plugin_duplicated#:#Duplicated
 notifications4plugin_duplicated_notification#:#Notification %s created
 notifications4plugin_edit#:#Edit
+notifications4plugin_edit_notification#:#Edit notification
 notifications4plugin_id#:#ID
 notifications4plugin_name#:#Name
-notifications4plugin_edit_notification#:#Edit notification
 notifications4plugin_name_info#:#The name is an additional unique identifier of a notification. This allows to retrieve the notification by name, not only by ID
 notifications4plugin_notifications#:#Notifications
 notifications4plugin_parser#:#Parser
