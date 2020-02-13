@@ -190,7 +190,7 @@ $text = self::notifications4plugin()->parser()->parseText($parser, $notification
 ```
 
 ##### Implement a custom parser
-Your class must implement the interface `srag\Notifications4Plugin\x\Parser\Parser`
+Your class must extends `srag\Notifications4Plugin\x\Parser\AbstractParser`
 
 You can add it
 ```php
