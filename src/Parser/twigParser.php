@@ -44,7 +44,7 @@ class twigParser extends AbstractParser
             "autoescape" => [
                 PropertyFormGUI::PROPERTY_CLASS => ilCheckboxInputGUI::class,
                 "setInfo"                       => nl2br(implode("\n", [
-                    self::notifications4plugin()->getPlugin()->translate("parser_option_autoescape_info_1", NotificationsCtrl::LANG_MODULE),
+                    self::notifications4plugin()->getPlugin()->translate("parser_option_autoescape_info_1", NotificationsCtrl::LANG_MODULE, ["|raw"]),
                     self::notifications4plugin()->getPlugin()->translate("parser_option_autoescape_info_2", NotificationsCtrl::LANG_MODULE, ["|e"]),
                     "<b>" . self::notifications4plugin()->getPlugin()->translate("parser_option_autoescape_info_3", NotificationsCtrl::LANG_MODULE) . "</b>"
                 ]), false)
