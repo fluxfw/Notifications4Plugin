@@ -1,7 +1,7 @@
 # Changelog
 
-## [x.x.x]
-- Bugfix in NotificationCtrl
+## [5.2.1]
+- Fix multiple notification tabs
 
 ## [5.2.0]
 - Auto escape twig parser option
