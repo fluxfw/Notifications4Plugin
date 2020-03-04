@@ -56,13 +56,12 @@ class NotificationCtrl
      */
     public function executeCommand()/*: void*/
     {
-        $notification_id = intval(filter_input(INPUT_GET, self::GET_PARAM_NOTIFICATION_ID));
-        $this->notification = self::notifications4plugin()->notifications()->getNotificationById($notification_id);
+        $this->notification = self::notifications4plugin()->notifications()->getNotificationById(intval(filter_input(INPUT_GET, self::GET_PARAM_NOTIFICATION_ID)));
         if ($this->notification === null) {
             $this->notification = self::notifications4plugin()->notifications()->factory()->newInstance();
         }
 
-        self::dic()->ctrl()->setParameter($this, self::GET_PARAM_NOTIFICATION_ID, $notification_id);
+        self::dic()->ctrl()->setParameter($this, self::GET_PARAM_NOTIFICATION_ID, $this->notification->getId());
 
         $this->setTabs();
 
