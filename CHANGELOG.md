@@ -1,5 +1,8 @@
 # Changelog
 
+## [5.4.0]
+- Use `srag/datatable`
+
 ## [5.3.0]
 - Min. PHP 7.2
 
