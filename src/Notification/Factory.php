@@ -87,9 +87,9 @@ final class Factory implements FactoryInterface
     /**
      * @inheritDoc
      */
-    public function newTableInstance(NotificationsCtrl $parent, string $cmd = NotificationsCtrl::CMD_LIST_NOTIFICATIONS) : NotificationsTableGUI
+    public function newTableInstance(NotificationsCtrl $parent) : NotificationsTable
     {
-        $table = new NotificationsTableGUI($parent, $cmd);
+        $table = new NotificationsTable($parent);
 
         return $table;
     }

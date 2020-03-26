@@ -3,6 +3,8 @@
 namespace srag\Notifications4Plugin;
 
 use LogicException;
+use srag\DataTable\Component\Factory as DataTableFactoryInterface;
+use srag\DataTable\Utils\DataTableTrait;
 use srag\DIC\DICTrait;
 use srag\DIC\Plugin\PluginInterface;
 use srag\DIC\Util\LibraryLanguageInstaller;
@@ -12,6 +14,7 @@ use srag\Notifications4Plugin\Parser\Repository as ParserRepository;
 use srag\Notifications4Plugin\Parser\RepositoryInterface as ParserRepositoryInterface;
 use srag\Notifications4Plugin\Sender\Repository as SenderRepository;
 use srag\Notifications4Plugin\Sender\RepositoryInterface as SenderRepositoryInterface;
+use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
  * Class Repository
@@ -24,6 +27,10 @@ final class Repository implements RepositoryInterface
 {
 
     use DICTrait;
+    use Notifications4PluginTrait;
+    use DataTableTrait {
+        dataTable as protected _dataTable;
+    }
     /**
      * @var RepositoryInterface|null
      */
@@ -63,6 +70,15 @@ final class Repository implements RepositoryInterface
     private function __construct()
     {
 
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function dataTable() : DataTableFactoryInterface
+    {
+        return self::_dataTable();
     }
 
 
@@ -123,6 +139,8 @@ final class Repository implements RepositoryInterface
     {
         LibraryLanguageInstaller::getInstance()->withPlugin($this->getPlugin())->withLibraryLanguageDirectory(__DIR__
             . "/../lang")->updateLanguages();
+
+        $this->dataTable()->installLanguages($this->plugin);
     }
 
 
