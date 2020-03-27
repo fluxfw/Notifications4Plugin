@@ -2,7 +2,7 @@
 
 namespace srag\Notifications4Plugin\Notification;
 
-use srag\DataTable\Component\Settings\Settings;
+use srag\DataTableUI\Component\Settings\Settings;
 
 /**
  * Interface RepositoryInterface
