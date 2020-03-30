@@ -47,7 +47,11 @@ class TableBuilder extends AbstractTableBuilder
                 self::dataTableUI()->column()->column("name",
                     self::notifications4plugin()->getPlugin()->translate("name", NotificationsCtrl::LANG_MODULE)),
                 self::dataTableUI()->column()->column("actions",
-                    self::notifications4plugin()->getPlugin()->translate("actions", NotificationsCtrl::LANG_MODULE))->withFormatter(new ActionsFormatter())
+                    self::notifications4plugin()->getPlugin()->translate("actions", NotificationsCtrl::LANG_MODULE))->withFormatter(self::dataTableUI()
+                    ->column()
+                    ->formatter()
+                    ->actions()
+                    ->actionsDropdown())
             ], new DataFetcher())->withPlugin(self::notifications4plugin()->getPlugin());
 
         return $table;
