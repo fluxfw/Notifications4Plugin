@@ -5,6 +5,7 @@ namespace srag\Notifications4Plugin\Notification;
 use ActiveRecord;
 use arConnector;
 use ilDateTime;
+use ILIAS\UI\Component\Component;
 use srag\CustomInputGUIs\TabsInputGUI\MultilangualTabsInputGUI;
 use srag\DIC\DICTrait;
 use srag\Notifications4Plugin\Parser\twigParser;
@@ -268,7 +269,7 @@ class Notification extends ActiveRecord implements NotificationInterface
 
 
     /**
-     * @return array
+     * @return Component[]
      */
     public function getActions() : array
     {
