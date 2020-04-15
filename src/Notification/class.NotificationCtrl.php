@@ -114,7 +114,7 @@ class NotificationCtrl
      */
     protected function addNotification() : void
     {
-        $form = self::notifications4plugin()->notifications()->factory()->newFormInstance($this, $this->notification);
+        $form = self::notifications4plugin()->notifications()->factory()->newFormBuilderInstance($this, $this->notification);
 
         self::output()->output($form);
     }
@@ -125,7 +125,7 @@ class NotificationCtrl
      */
     protected function createNotification() : void
     {
-        $form = self::notifications4plugin()->notifications()->factory()->newFormInstance($this, $this->notification);
+        $form = self::notifications4plugin()->notifications()->factory()->newFormBuilderInstance($this, $this->notification);
 
         if (!$form->storeForm()) {
             self::output()->output($form);
@@ -146,7 +146,7 @@ class NotificationCtrl
      */
     protected function editNotification() : void
     {
-        $form = self::notifications4plugin()->notifications()->factory()->newFormInstance($this, $this->notification);
+        $form = self::notifications4plugin()->notifications()->factory()->newFormBuilderInstance($this, $this->notification);
 
         self::output()->output($form);
     }
@@ -157,7 +157,7 @@ class NotificationCtrl
      */
     protected function updateNotification() : void
     {
-        $form = self::notifications4plugin()->notifications()->factory()->newFormInstance($this, $this->notification);
+        $form = self::notifications4plugin()->notifications()->factory()->newFormBuilderInstance($this, $this->notification);
 
         if (!$form->storeForm()) {
             self::output()->output($form);

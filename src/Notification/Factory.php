@@ -4,6 +4,7 @@ namespace srag\Notifications4Plugin\Notification;
 
 use ilDateTime;
 use srag\DIC\DICTrait;
+use srag\Notifications4Plugin\Notification\Form\NotificationFormBuilder;
 use srag\Notifications4Plugin\Notification\Table\TableBuilder;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 use stdClass;
@@ -99,9 +100,9 @@ final class Factory implements FactoryInterface
     /**
      * @inheritDoc
      */
-    public function newFormInstance(NotificationCtrl $parent, NotificationInterface $notification) : NotificationFormGUI
+    public function newFormBuilderInstance(NotificationCtrl $parent, NotificationInterface $notification) : NotificationFormBuilder
     {
-        $form = new NotificationFormGUI($parent, $notification);
+        $form = new NotificationFormBuilder($parent, $notification);
 
         return $form;
     }
