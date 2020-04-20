@@ -19,14 +19,14 @@ use srag\Notifications4Plugin\Parser\Parser;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 
 /**
- * Class NotificationFormBuilder
+ * Class FormBuilder
  *
  * @package srag\Notifications4Plugin\Notification\Form
  *
  * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  * @author  Stefan Wanzenried <sw@studer-raimann.ch>
  */
-class NotificationFormBuilder extends AbstractFormBuilder
+class FormBuilder extends AbstractFormBuilder
 {
 
     use Notifications4PluginTrait;

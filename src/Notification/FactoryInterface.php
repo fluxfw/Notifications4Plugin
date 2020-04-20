@@ -2,7 +2,7 @@
 
 namespace srag\Notifications4Plugin\Notification;
 
-use srag\Notifications4Plugin\Notification\Form\NotificationFormBuilder;
+use srag\Notifications4Plugin\Notification\Form\FormBuilder;
 use srag\Notifications4Plugin\Notification\Table\TableBuilder;
 use stdClass;
 
@@ -42,7 +42,7 @@ interface FactoryInterface
      * @param NotificationCtrl      $parent
      * @param NotificationInterface $notification
      *
-     * @return NotificationFormBuilder
+     * @return FormBuilder
      */
-    public function newFormBuilderInstance(NotificationCtrl $parent, NotificationInterface $notification) : NotificationFormBuilder;
+    public function newFormBuilderInstance(NotificationCtrl $parent, NotificationInterface $notification) : FormBuilder;
 }
