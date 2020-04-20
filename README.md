@@ -201,7 +201,7 @@ self::notifications4plugin()->parser()->addParser(new CustomParser());
 ```
 
 ### Requirements
-* ILIAS 5.4
+* ILIAS 5.4 or ILIAS 6
 * PHP >=7.2
 
 ### Adjustment suggestions
