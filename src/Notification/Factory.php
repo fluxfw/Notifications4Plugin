@@ -21,6 +21,7 @@ final class Factory implements FactoryInterface
 
     use DICTrait;
     use Notifications4PluginTrait;
+
     /**
      * @var FactoryInterface|null
      */

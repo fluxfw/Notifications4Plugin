@@ -23,6 +23,7 @@ class InternalMailSender implements Sender
 
     use DICTrait;
     use Notifications4PluginTrait;
+
     /**
      * @var string
      */

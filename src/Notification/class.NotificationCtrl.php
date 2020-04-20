@@ -21,6 +21,7 @@ class NotificationCtrl
 
     use DICTrait;
     use Notifications4PluginTrait;
+
     const CMD_ADD_NOTIFICATION = "addNotification";
     const CMD_BACK = "back";
     const CMD_CREATE_NOTIFICATION = "createNotification";
