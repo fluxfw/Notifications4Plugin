@@ -5,7 +5,6 @@ namespace srag\Notifications4Plugin\Notification\Form;
 use ILIAS\UI\Component\Input\Field\Radio;
 use ilNonEditableValueGUI;
 use ilTextInputGUI;
-use ilUtil;
 use srag\CustomInputGUIs\FormBuilder\AbstractFormBuilder;
 use srag\CustomInputGUIs\InputGUIWrapperUIInputComponent\InputGUIWrapperUIInputComponent;
 use srag\CustomInputGUIs\PropertyFormGUI\Items\Items;
@@ -201,7 +200,7 @@ class FormBuilder extends AbstractFormBuilder
      */
     public function render() : string
     {
-        ilUtil::sendInfo(self::output()->getHTML([
+        $this->messages[] = self::dic()->ui()->factory()->messageBox()->info(self::output()->getHTML([
             htmlspecialchars(self::notifications4plugin()->getPlugin()->translate("placeholder_types_info", NotificationsCtrl::LANG_MODULE)),
             "<br><br>",
             self::dic()->ui()->factory()->listing()->descriptive(self::notifications4plugin()->getPlaceholderTypes())
