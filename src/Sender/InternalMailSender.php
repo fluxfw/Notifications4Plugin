@@ -4,12 +4,12 @@ namespace srag\Notifications4Plugin\Sender;
 
 use ilMail;
 use ilMailError;
+use ilMailException;
 use ilObjUser;
 use srag\DIC\DICTrait;
+use srag\Notifications4Plugin\Exception\Notifications4PluginException;
 use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
 use Throwable;
-use srag\Notifications4Plugin\AttendanceList\Exception\Notifications4PluginException;
-use ilMailException;
 
 /**
  * Class InternalMailSender
@@ -87,6 +87,7 @@ class InternalMailSender implements Sender
         }
     }
 
+
     /**
      * @inheritDoc
      * @throws ilMailException
@@ -101,17 +102,20 @@ class InternalMailSender implements Sender
 
         $errors = $this->mailer->sendMail($this->getUserTo(), $this->getCc(), $this->getBcc(), $this->getSubject(), $this->getMessage(), [], ["normal"]);
 
-        if (count($errors) > 0) {
+        if (!empty($errors)) {
             $error = $errors[0];
             if ($error instanceof ilMailError) {
-                global $DIC;
-                throw new ilMailException($DIC->language()->txt($error->getLanguageVariable()));
-            } elseif ($error instanceof Throwable) {
-                throw $error;
-            } elseif (is_string($error)) {
-                throw new Notifications4PluginException($error);
+                throw new ilMailException(self::dic()->language()->txt($error->getLanguageVariable()));
             } else {
-                throw new Notifications4PluginException('Unknown exception when sending mail.');
+                if ($error instanceof Throwable) {
+                    throw $error;
+                } else {
+                    if (is_string($error)) {
+                        throw new Notifications4PluginException($error);
+                    } else {
+                        throw new Notifications4PluginException('Unknown exception when sending mail.');
+                    }
+                }
             }
         }
     }
