@@ -3,6 +3,9 @@
 ## [x]
 - Remove ILIAS 5.3 support
 
+## [5.4.4]
+- Fixed exceptions in internal mail sender
+
 ## [5.4.3]
 - Fix
 
