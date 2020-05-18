@@ -1,6 +1,8 @@
 # Changelog
 
-## [x]
+## [5.5.0]
+- New form
+- ILIAS 6 support
 - Remove ILIAS 5.3 support
 
 ## [5.4.4]
