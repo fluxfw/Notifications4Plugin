@@ -67,6 +67,6 @@ class twigParser extends AbstractParser
             "autoescape" => boolval($options["autoescape"])
         ]);
 
-        return $twig->render($text, $placeholders);
+        return $this->fixLineBreaks($twig->render($text, $placeholders));
     }
 }
