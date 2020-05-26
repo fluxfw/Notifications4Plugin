@@ -48,7 +48,8 @@ class twigParser extends AbstractParser
                 ->withByline(nl2br(implode("\n", [
                     self::notifications4plugin()->getPlugin()->translate("parser_option_autoescape_info_1", NotificationsCtrl::LANG_MODULE, ["|raw"]),
                     self::notifications4plugin()->getPlugin()->translate("parser_option_autoescape_info_2", NotificationsCtrl::LANG_MODULE, ["|e"]),
-                    "<b>" . self::notifications4plugin()->getPlugin()->translate("parser_option_autoescape_info_3", NotificationsCtrl::LANG_MODULE) . "</b>"
+                    "<b>" . self::notifications4plugin()->getPlugin()->translate("parser_option_autoescape_info_3", NotificationsCtrl::LANG_MODULE) . "</b>",
+                    self::notifications4plugin()->getPlugin()->translate("parser_option_autoescape_info_4", NotificationsCtrl::LANG_MODULE)
                 ]), false))
         ];
     }
