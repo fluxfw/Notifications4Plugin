@@ -32,13 +32,6 @@ interface RepositoryInterface
      */
     public function factory() : FactoryInterface;
 
-
-    /**
-     * @return Parser[]
-     */
-    public function getPossibleParsers() : array;
-
-
     /**
      * @param string $parser_class
      *
@@ -47,7 +40,6 @@ interface RepositoryInterface
      * @throws Notifications4PluginException
      */
     public function getParserByClass(string $parser_class) : Parser;
-
 
     /**
      * @param NotificationInterface $notification
@@ -58,6 +50,10 @@ interface RepositoryInterface
      */
     public function getParserForNotification(NotificationInterface $notification) : Parser;
 
+    /**
+     * @return Parser[]
+     */
+    public function getPossibleParsers() : array;
 
     /**
      * @internal

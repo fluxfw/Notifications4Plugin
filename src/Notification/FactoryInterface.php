@@ -23,21 +23,6 @@ interface FactoryInterface
      */
     public function fromDB(stdClass $data) : NotificationInterface;
 
-
-    /**
-     * @return NotificationInterface
-     */
-    public function newInstance() : NotificationInterface;
-
-
-    /**
-     * @param NotificationsCtrl $parent
-     *
-     * @return TableBuilder
-     */
-    public function newTableBuilderInstance(NotificationsCtrl $parent) : TableBuilder;
-
-
     /**
      * @param NotificationCtrl      $parent
      * @param NotificationInterface $notification
@@ -45,4 +30,16 @@ interface FactoryInterface
      * @return FormBuilder
      */
     public function newFormBuilderInstance(NotificationCtrl $parent, NotificationInterface $notification) : FormBuilder;
+
+    /**
+     * @return NotificationInterface
+     */
+    public function newInstance() : NotificationInterface;
+
+    /**
+     * @param NotificationsCtrl $parent
+     *
+     * @return TableBuilder
+     */
+    public function newTableBuilderInstance(NotificationsCtrl $parent) : TableBuilder;
 }
