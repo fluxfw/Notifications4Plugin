@@ -29,20 +29,24 @@ interface Parser
      */
     const NAME = "";
 
+
     /**
      * @return string
      */
     public function getClass() : string;
+
 
     /**
      * @return string
      */
     public function getDocLink() : string;
 
+
     /**
      * @return string
      */
     public function getName() : string;
+
 
     /**
      * @return Input[]

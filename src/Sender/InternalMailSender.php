@@ -32,13 +32,13 @@ class InternalMailSender implements Sender
      *
      * @var string|int
      */
-    protected $bcc;
+    protected $bcc = "";
     /**
      * User-ID or login of cc
      *
      * @var string|int
      */
-    protected $cc;
+    protected $cc = "";
     /**
      * @var ilMail
      */
@@ -270,7 +270,11 @@ class InternalMailSender implements Sender
 
         $this->mailer->setSaveInSentbox($this->isSaveInSentBox());
 
-        $errors = $this->mailer->sendMail($this->getUserTo(), $this->getCc(), $this->getBcc(), $this->getSubject(), $this->getMessage(), [], ["normal"]);
+        if (self::version()->is6()) {
+            $errors = $this->mailer->sendMail($this->getUserTo(), $this->getCc(), $this->getBcc(), $this->getSubject(), $this->getMessage(), [], false);
+        } else {
+            $errors = $this->mailer->sendMail($this->getUserTo(), $this->getCc(), $this->getBcc(), $this->getSubject(), $this->getMessage(), [], ["normal"]);
+        }
 
         if (!empty($errors)) {
             $error = $errors[0];

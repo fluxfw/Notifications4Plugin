@@ -23,6 +23,7 @@ interface FactoryInterface
      */
     public function fromDB(stdClass $data) : NotificationInterface;
 
+
     /**
      * @param NotificationCtrl      $parent
      * @param NotificationInterface $notification
@@ -31,10 +32,12 @@ interface FactoryInterface
      */
     public function newFormBuilderInstance(NotificationCtrl $parent, NotificationInterface $notification) : FormBuilder;
 
+
     /**
      * @return NotificationInterface
      */
     public function newInstance() : NotificationInterface;
+
 
     /**
      * @param NotificationsCtrl $parent

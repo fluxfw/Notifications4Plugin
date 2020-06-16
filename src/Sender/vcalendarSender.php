@@ -74,7 +74,7 @@ class vcalendarSender implements Sender
     /**
      * @var string|array
      */
-    protected $to;
+    protected $to = "";
     /**
      * @var string
      */

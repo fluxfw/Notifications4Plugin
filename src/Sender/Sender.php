@@ -22,12 +22,14 @@ interface Sender
      */
     public function reset();
 
+
     /**
      * Send the notification
      *
      * @throws Notifications4PluginException
      */
     public function send() : void;
+
 
     /**
      * @param array|string $bcc
@@ -36,6 +38,7 @@ interface Sender
      */
     public function setBcc($bcc);
 
+
     /**
      * @param array|string $cc
      *
@@ -43,12 +46,14 @@ interface Sender
      */
     public function setCc($cc);
 
+
     /**
      * @param string $from
      *
      * @return $this
      */
     public function setFrom($from);
+
 
     /**
      * Set the message to send
@@ -59,6 +64,7 @@ interface Sender
      */
     public function setMessage($message);
 
+
     /**
      * Set the subject for the message
      *
@@ -67,6 +73,7 @@ interface Sender
      * @return $this
      */
     public function setSubject($subject);
+
 
     /**
      * @param array|string $to
