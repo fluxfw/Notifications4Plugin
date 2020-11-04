@@ -6,7 +6,7 @@ use LogicException;
 use srag\DataTableUI\Implementation\Utils\DataTableUITrait;
 use srag\DIC\DICTrait;
 use srag\DIC\Plugin\PluginInterface;
-use srag\DIC\Util\LibraryLanguageInstaller;
+use srag\LibraryLanguageInstaller\LibraryLanguageInstaller;
 use srag\Notifications4Plugin\Notification\Repository as NotificationsRepository;
 use srag\Notifications4Plugin\Notification\RepositoryInterface as NotificationsRepositoryInterface;
 use srag\Notifications4Plugin\Parser\Repository as ParserRepository;
