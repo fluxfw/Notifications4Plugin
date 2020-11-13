@@ -41,7 +41,11 @@
   "autoload": {
     "psr-4": {
       "srag\\Notifications4Plugin\\": "src/"
-    }
+    },
+    "classmap": [
+      "src/Notification/class.NotificationsCtrl.php",
+      "src/Notification/class.NotificationCtrl.php"
+    ]
   },
   "config": {
     "classmap-authoritative": true,
