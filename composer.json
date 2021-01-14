@@ -11,8 +11,8 @@
   },
   "type": "library",
   "keywords": [
-    "ILIAS",
-    "Notifications"
+    "ilias",
+    "notifications"
   ],
   "homepage": "https://github.com/studer-raimann/Notifications4Plugin",
   "license": "GPL-3.0-only",
