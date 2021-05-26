@@ -9,8 +9,6 @@ use srag\Notifications4Plugin\Notification\NotificationInterface;
  * Interface RepositoryInterface
  *
  * @package srag\Notifications4Plugin\Sender
- *
- * @author  studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
  */
 interface RepositoryInterface
 {
