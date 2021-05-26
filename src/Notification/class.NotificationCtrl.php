@@ -14,8 +14,6 @@ use srag\Notifications4Plugin\Utils\Notifications4PluginTrait;
  *
  * @package           srag\Notifications4Plugin\Notification
  *
- * @author            studer + raimann ag - Team Custom 1 <support-custom1@studer-raimann.ch>
- *
  * @ilCtrl_isCalledBy srag\Notifications4Plugin\Notification\NotificationCtrl: srag\Notifications4Plugin\Notification\NotificationsCtrl
  */
 class NotificationCtrl
