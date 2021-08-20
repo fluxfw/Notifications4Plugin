@@ -1,7 +1,7 @@
 #!/usr/bin/env php
 <?php
 (function () : void {
-    $twig_root = __DIR__ . "/../../twig/twig";
+    $twig_root = __DIR__ . "/../../../twig/twig";
     if (!file_exists($twig_root)) {
         $twig_root = __DIR__ . "/../vendor/twig/twig";
     }
